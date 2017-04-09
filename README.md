@@ -1,1 +1,1 @@
-"# image-slider" 
+Create a jQuery image slider
