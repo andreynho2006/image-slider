@@ -1,0 +1,18 @@
+#slider>img{
+  width: 100%;
+  max-width: 600px;
+  float: left;
+  display: none;
+}
+#slider {
+  width: 600px;
+  height: 440px;
+  overflow: hidden;
+  margin: 30px auto;
+}
+a{
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  margin-top: 30px;
+  text-decoration: none;
+}
