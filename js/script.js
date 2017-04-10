@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 
 function startSlider(){
-  var count = $("#slider>img").length;
+  count = $("#slider>img").length;
 
   loop = setInterval(function(){
 
@@ -25,3 +25,46 @@ function startSlider(){
 
   },3000)
 }
+
+function prev(){
+  newSlide = sliderInt - 1;
+  showSlide(newSlide);
+}
+
+function next(){
+  newSlide = sliderInt + 1;
+  showSlide(newSlide);
+}
+
+function stopLoop(){
+  window.clearInterval(loop);
+}
+
+function showSlide(id){
+  stopLoop();
+  if(id > count){
+    id = 1;
+  }else if( id < 1){
+    id = count;
+  }
+
+  $("#slider>img").fadeOut(300);
+  $("#slider>img#"+id).fadeIn(300);
+
+  sliderInt = id;
+  sliderNext = id + 1;
+  startSlider();
+}
+
+
+
+
+
+$("#slider>img").hover(
+  function (){
+    stopLoop();
+  },
+  function(){
+    startSlider();
+  }
+);
